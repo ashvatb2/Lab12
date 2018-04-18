@@ -14,6 +14,6 @@
         android:layout_height="wrap_content"
         android:text="Update"
         tools:text="Update"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorA"
         />
 </LinearLayout>

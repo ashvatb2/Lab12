@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -46,6 +47,7 @@ public final class MainActivity extends AppCompatActivity {
             public void onClick(final View v) {
                 Log.d(TAG, "API Call Initiated");
                 startAPICall();
+
             }
         });
 
@@ -71,9 +73,11 @@ public final class MainActivity extends AppCompatActivity {
                     null,
                     new Response.Listener<JSONObject>() {
                         @Override
-                        public void onResponse(final JSONObject response) {
+                        public void onResponse(final JSONObject response) { 
                             try {
                                 Log.d(TAG, response.toString(2));
+                                final TextView helloTextView = (TextView) findViewById(R.id.refresh_weather);
+                                helloTextView.setText(response.toString());
                             } catch (JSONException ignored) { }
                         }
                     }, new Response.ErrorListener() {
